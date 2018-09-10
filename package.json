@@ -1,0 +1,27 @@
+{
+  "name": "ethereum-development-course",
+  "version": "0.0.1",
+  "description": "Material for a Ethereum Development Course",
+  "main": "index.js",
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ideatosrl/ethereum-development-course.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "Solidity",
+    "Blockchain"
+  ],
+  "author": "Francesco Strazzullo (francesco.strazzullo@ideato.it)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ideatosrl/ethereum-development-course/issues"
+  },
+  "homepage": "https://github.com/ideatosrl/ethereum-development-course#readme",
+  "devDependencies": {
+    "truffle": "^5.0.0-beta.0"
+  }
+}
