@@ -1,4 +1,3 @@
-
 const BasicCounter = artifacts.require('./BasicCounter.sol')
 
 contract('BasicCounter', () => {

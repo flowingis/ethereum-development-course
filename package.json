@@ -14,7 +14,9 @@
   "keywords": [
     "Ethereum",
     "Solidity",
-    "Blockchain"
+    "Blockchain",
+    "SmartContracts",
+    "DApps"
   ],
   "author": "Francesco Strazzullo (francesco.strazzullo@ideato.it)",
   "license": "MIT",

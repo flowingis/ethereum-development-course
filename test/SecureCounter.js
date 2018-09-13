@@ -1,4 +1,3 @@
-
 const SecureCounter = artifacts.require('./SecureCounter.sol')
 
 const getAccounts = () => new Promise((resolve, reject) => {

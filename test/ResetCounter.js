@@ -1,4 +1,3 @@
-
 const ResetCounter = artifacts.require('./ResetCounter.sol')
 
 contract('ResetCounter', () => {
