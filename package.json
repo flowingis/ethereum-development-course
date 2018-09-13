@@ -6,7 +6,8 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "truffle test",
-    "local-node": "ganache-cli"
+    "local-node": "ganache-cli",
+    "deploy-local": "truffle deploy --network local"
   },
   "repository": {
     "type": "git",
