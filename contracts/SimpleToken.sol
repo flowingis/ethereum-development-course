@@ -2,7 +2,7 @@ pragma solidity ^0.4.23;
 
 import "./ConvertLib.sol";
 
-contract BasicToken {
+contract SimpleToken {
     mapping (address => uint) balances;
 
     constructor() public {

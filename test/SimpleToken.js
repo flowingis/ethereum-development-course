@@ -1,6 +1,6 @@
-const BasicToken = artifacts.require('./BasicToken.sol')
+const SimpleToken = artifacts.require('./SimpleToken.sol')
 
-contract('BasicToken', (accounts) => {
+contract('SimpleToken', (accounts) => {
   let contract
   let owner
   let receiver
@@ -9,19 +9,19 @@ contract('BasicToken', (accounts) => {
 
   beforeEach(async () => {
     [owner, receiver] = accounts
-    contract = await BasicToken.new({ from: owner })
+    contract = await SimpleToken.new({ from: owner })
   })
 
-  it('should put 10000 BasicToken in the first account', async () => {
+  it('should put 10000 SimpleToken in the first account', async () => {
     const balance = await contract.getBalance(owner)
     assert.equal(balance.valueOf(), 10000)
   })
 
   it('should call a function that depends on a linked library', async () => {
-    const basicTokenBalance = (await contract.getBalance(owner)).toNumber()
-    const basicTokenEthBalance = (await contract.getBalanceInEth(owner)).toNumber()
+    const simpleTokenBalance = (await contract.getBalance(owner)).toNumber()
+    const simpleTokenEthBalance = (await contract.getBalanceInEth(owner)).toNumber()
 
-    assert.equal(basicTokenEthBalance, 2 * basicTokenBalance, 'Library function returned unexpected function, linkage may be broken')
+    assert.equal(simpleTokenEthBalance, 2 * simpleTokenBalance, 'Library function returned unexpected function, linkage may be broken')
   })
 
   it('should send coin correctly', async () => {

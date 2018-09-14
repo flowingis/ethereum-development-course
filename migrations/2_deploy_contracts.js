@@ -1,10 +1,10 @@
 const ConvertLib = artifacts.require('./ConvertLib.sol')
-const BasicToken = artifacts.require('./BasicToken.sol')
+const SimpleToken = artifacts.require('./SimpleToken.sol')
 const TutorialToken = artifacts.require('./TutorialToken.sol')
 
 module.exports = deployer => {
   deployer.deploy(ConvertLib)
-  deployer.link(ConvertLib, BasicToken)
-  deployer.deploy(BasicToken)
+  deployer.link(ConvertLib, SimpleToken)
+  deployer.deploy(SimpleToken)
   deployer.deploy(TutorialToken)
 }
