@@ -1,29 +1,18 @@
 const Poll = artifacts.require('./Poll.sol')
 
-const getAccounts = () => new Promise((resolve, reject) => {
-  web3.eth.getAccounts((err, accounts) => {
-    if (err) {
-      reject(err)
-    } else {
-      resolve(accounts)
-    }
-  })
-})
-
 const RESULT_TYPES = {
   DRAW: 0,
   FAVORABLE: 1,
   NOT_FAVORABLE: 2
 }
 
-contract('Poll', () => {
+contract('Poll', (accounts) => {
   let owner
   let contract
   let firstVoter
   let secondVoter
 
   beforeEach(async () => {
-    const accounts = await getAccounts()
     owner = accounts[0]
     firstVoter = accounts[1]
     secondVoter = accounts[2]

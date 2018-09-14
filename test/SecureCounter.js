@@ -1,22 +1,11 @@
 const SecureCounter = artifacts.require('./SecureCounter.sol')
 
-const getAccounts = () => new Promise((resolve, reject) => {
-  web3.eth.getAccounts((err, accounts) => {
-    if (err) {
-      reject(err)
-    } else {
-      resolve(accounts)
-    }
-  })
-})
-
-contract('SecureCounter', () => {
+contract('SecureCounter', (accounts) => {
   let owner
   let contract
   let anotherAccount
 
   beforeEach(async () => {
-    const accounts = await getAccounts()
     owner = accounts[0]
     anotherAccount = accounts[1]
     contract = await SecureCounter.new({ from: owner })

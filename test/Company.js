@@ -1,25 +1,13 @@
 const Company = artifacts.require('./Company.sol')
 
-const getAccounts = () => new Promise((resolve, reject) => {
-  web3.eth.getAccounts((err, accounts) => {
-    if (err) {
-      reject(err)
-    } else {
-      resolve(accounts)
-    }
-  })
-})
-
-contract('Company', () => {
+contract('Company', (accounts) => {
   let contract
   let owner
   let payer
   let associate1
   let associate2
-  let accounts
 
   beforeEach(async () => {
-    accounts = await getAccounts()
     owner = accounts[0]
     payer = accounts[1]
     associate1 = accounts[2]
