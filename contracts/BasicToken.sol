@@ -5,8 +5,6 @@ import "./ConvertLib.sol";
 contract BasicToken {
     mapping (address => uint) balances;
 
-    event Transfer(address indexed _from, address indexed _to, uint256 _value);
-
     constructor() public {
         balances[msg.sender] = 10000;
     }
@@ -18,9 +16,7 @@ contract BasicToken {
         
         balances[msg.sender] -= amount;
         balances[receiver] += amount;
-
-        emit Transfer(msg.sender, receiver, amount);
-        
+    
         return true;
     }
 
