@@ -22,7 +22,7 @@ contract('SecureCounter', () => {
     contract = await SecureCounter.new({ from: owner })
   })
 
-  it('shoudl be invokable just by the owner', async () => {
+  it('reset should be invokable just by the owner', async () => {
     try {
       await contract.reset({ from: anotherAccount })
       assert.fail()
