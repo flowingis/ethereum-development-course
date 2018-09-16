@@ -6,6 +6,7 @@ contract LoggableCounter {
 
     event Increment(uint value);
     event Reset();
+    event DivisibleByTen(); 
 
     modifier onlyByOwner()
     {
@@ -19,6 +20,9 @@ contract LoggableCounter {
     function increment() public {
         counter++;
         emit Increment(counter);
+        if(counter % 10 == 0){
+            emit DivisibleByTen();
+        }
     }
 
     function 

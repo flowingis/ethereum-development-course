@@ -21,6 +21,17 @@ contract('LoggableCounter', (accounts) => {
     assert.equal(log.args.value.toNumber(), 4)
   })
 
+  it('increment should emit a DivisibleByTen eventevery ten increments', async () => {
+    for (let index = 0; index < 9; index++) {
+      await contract.increment({ from: owner })
+    }
+    const result = await contract.increment({ from: owner })
+
+    const log = result.logs.find(log => log.event === 'DivisibleByTen')
+
+    assert.isOk(log)
+  })
+
   it('reset should emit a Reset event', async () => {
     const result = await contract.reset({ from: owner })
 
