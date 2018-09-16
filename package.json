@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "build": "truffle compile",
     "precommit": "lint-staged",
     "test": "truffle test",
     "local-node": "ganache-cli",
