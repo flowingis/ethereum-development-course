@@ -9,6 +9,7 @@
     "precommit": "lint-staged",
     "test": "truffle test",
     "local-node": "ganache-cli",
+    "web3-console": "truffle console --network local",
     "deploy-local": "truffle deploy --reset --network local"
   },
   "repository": {

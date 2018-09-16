@@ -1,13 +1,13 @@
-import Web3 from 'web3'
 import truffleContract from 'truffle-contract'
 
 import metaCoinArtifact from '../../build/contracts/LoggableCounter.json'
 
 import template from './counter.html'
-import { web3ProviderFix, htmlToElement } from 'apps/utils'
+import { web3ProviderFix, htmlToElement, initWeb3 } from 'apps/utils'
+
+const web3 = initWeb3()
 
 const LoggableCounter = truffleContract(metaCoinArtifact)
-const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://127.0.0.1:8545'))
 LoggableCounter.setProvider(web3.currentProvider)
 web3ProviderFix(LoggableCounter)
 
