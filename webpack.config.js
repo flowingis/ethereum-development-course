@@ -5,6 +5,7 @@ const dist = path.join(__dirname, 'dist')
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     path.join(__dirname, 'apps', 'index.js')
   ],
   output: {
