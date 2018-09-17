@@ -1,7 +1,7 @@
 import truffleContract from 'truffle-contract'
 import { web3ProviderFix } from 'apps/utils'
-import metaCoinArtifact from '../../build/contracts/LoggableCounter.json'
-const LoggableCounter = truffleContract(metaCoinArtifact)
+import artifact from '../../build/contracts/LoggableCounter.json'
+const LoggableCounter = truffleContract(artifact)
 
 export default web3 => {
   LoggableCounter.setProvider(web3.currentProvider)

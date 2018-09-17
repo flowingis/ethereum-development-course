@@ -1,7 +1,7 @@
 import swal from 'sweetalert2'
 import template from './counter.html'
 import { htmlToElement, initWeb3 } from 'apps/utils'
-import loggableCounter from './loggableCounter'
+import contractFactory from './contract'
 
 const web3 = initWeb3()
 
@@ -10,7 +10,7 @@ class CounterApp extends HTMLElement {
     this.innerHTML = template
     this.attachEventListeners()
     this.getAccounts()
-    this.contract = loggableCounter(web3)
+    this.contract = contractFactory(web3)
     this.unsubscribe = this.contract.addEventListener(this.addEvent.bind(this))
   }
 
