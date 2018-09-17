@@ -10,9 +10,11 @@ export default web3 => {
   let contract
 
   const deploy = async address => {
+    const gasPrice = await web3.eth.getGasPrice()
     contract = await PeopleList.new({
       from: address,
-      gas: 4712388
+      gas: 4712388,
+      gasPrice
     })
   }
 
@@ -24,10 +26,12 @@ export default web3 => {
     const { name, birthdate, sex } = person
 
     const gas = await contract.add.estimateGas(name, birthdate, sex)
+    const gasPrice = await web3.eth.getGasPrice()
 
     return contract.add(name, birthdate, sex, {
       from: address,
-      gas
+      gas,
+      gasPrice
     })
   }
 
