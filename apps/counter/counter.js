@@ -1,4 +1,4 @@
-
+import swal from 'sweetalert2'
 import template from './counter.html'
 import { htmlToElement, initWeb3 } from 'apps/utils'
 import loggableCounter from './loggableCounter'
@@ -51,24 +51,56 @@ class CounterApp extends HTMLElement {
   }
 
   async increment (address) {
-    await this.contract.increment(address)
-    await this.getCounter()
+    try {
+      await this.contract.increment(address)
+      await this.getCounter()
+    } catch (e) {
+      swal({
+        title: 'Error!',
+        text: e.message,
+        type: 'error'
+      })
+    }
   }
 
   async reset (address) {
-    await this.contract.reset(address)
-    await this.getCounter()
+    try {
+      await this.contract.reset(address)
+      await this.getCounter()
+    } catch (e) {
+      swal({
+        title: 'Error!',
+        text: e.message,
+        type: 'error'
+      })
+    }
   }
 
   async deploy (address) {
-    await this.contract.deploy(address)
-    this.querySelector('[data-contract-address]').innerText = this.contract.address
-    await this.getCounter()
+    try {
+      await this.contract.deploy(address)
+      this.querySelector('[data-contract-address]').innerText = this.contract.address
+      await this.getCounter()
+    } catch (e) {
+      swal({
+        title: 'Error!',
+        text: e.message,
+        type: 'error'
+      })
+    }
   }
 
   async getCounter () {
-    const counter = await this.contract.getValue()
-    this.querySelector('[data-contract-counter]').innerText = counter.toNumber()
+    try {
+      const counter = await this.contract.getValue()
+      this.querySelector('[data-contract-counter]').innerText = counter.toNumber()
+    } catch (e) {
+      swal({
+        title: 'Error!',
+        text: e.message,
+        type: 'error'
+      })
+    }
   }
 
   addEvent (eventName) {
