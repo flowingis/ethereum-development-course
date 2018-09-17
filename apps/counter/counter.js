@@ -76,9 +76,9 @@ class CounterApp extends HTMLElement {
     }
   }
 
-  async deploy (address) {
+  async deploy (owner) {
     try {
-      await this.contract.deploy(address)
+      await this.contract.deploy(owner)
       this.querySelector('[data-contract-address]').innerText = this.contract.address
       await this.getCounter()
     } catch (e) {
