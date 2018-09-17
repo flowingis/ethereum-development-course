@@ -1,23 +1,21 @@
-import truffleContract from 'truffle-contract'
-
-import metaCoinArtifact from '../../build/contracts/LoggableCounter.json'
 
 import template from './counter.html'
-import { web3ProviderFix, htmlToElement, initWeb3 } from 'apps/utils'
+import { htmlToElement, initWeb3 } from 'apps/utils'
+import loggableCounter from './loggableCounter'
 
 const web3 = initWeb3()
-
-const LoggableCounter = truffleContract(metaCoinArtifact)
-LoggableCounter.setProvider(web3.currentProvider)
-web3ProviderFix(LoggableCounter)
 
 class CounterApp extends HTMLElement {
   connectedCallback () {
     this.innerHTML = template
-
     this.attachEventListeners()
-
     this.getAccounts()
+    this.contract = loggableCounter(web3)
+    this.unsubscribe = this.contract.addEventListener(this.addEvent.bind(this))
+  }
+
+  disconnectedCallback () {
+    this.unsubscribe()
   }
 
   attachEventListeners () {
@@ -53,38 +51,23 @@ class CounterApp extends HTMLElement {
   }
 
   async increment (address) {
-    await this.contract.increment({ from: address })
+    await this.contract.increment(address)
     await this.getCounter()
   }
 
   async reset (address) {
-    await this.contract.reset({ from: address })
+    await this.contract.reset(address)
     await this.getCounter()
   }
 
   async deploy (address) {
-    this.contract = await LoggableCounter.new({
-      from: address,
-      gas: 4712388,
-      gasPrice: 100000000000
-    })
-
-    const resetEvent = this.contract.Reset()
-    const incrementEvent = this.contract.Increment()
-    const divisibleByTenEvent = this.contract.DivisibleByTen()
-
-    const onEvent = eventName => () => this.addEvent(eventName)
-
-    resetEvent.watch(onEvent('Reset'))
-    incrementEvent.watch(onEvent('Increment'))
-    divisibleByTenEvent.watch(onEvent('DivisibleByTen'))
-
+    await this.contract.deploy(address)
     this.querySelector('[data-contract-address]').innerText = this.contract.address
     await this.getCounter()
   }
 
   async getCounter () {
-    const counter = await this.contract.counter()
+    const counter = await this.contract.getValue()
     this.querySelector('[data-contract-counter]').innerText = counter.toNumber()
   }
 
