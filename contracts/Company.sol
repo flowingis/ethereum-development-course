@@ -22,6 +22,14 @@ contract Company {
         _;
     }
 
+    function getCount() public view returns(uint) {
+        return associates.length;
+    }
+
+    function get(uint index) public view returns(address) {
+        return associates[index];
+    }
+
     function 
         addAssociate(address _associate) 
         public
