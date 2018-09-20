@@ -37,7 +37,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "7.0.0",
+    "babel-eslint": "^9.0.0",
     "babel-loader": "8.0.2",
     "babel-plugin-transform-custom-element-classes": "0.1.0",
     "ganache-cli": "^6.1.8",
@@ -53,6 +55,7 @@
     "webpack-dev-server": "^3.1.8"
   },
   "standard": {
+    "parser": "babel-eslint",
     "globals": [
       "contract",
       "beforeEach",
@@ -60,7 +63,8 @@
       "assert",
       "artifacts",
       "web3",
-      "HTMLElement"
+      "HTMLElement",
+      "import"
     ]
   },
   "dependencies": {

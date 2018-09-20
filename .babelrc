@@ -12,6 +12,7 @@
 		]
 	],
 	"plugins": [
-		"transform-custom-element-classes"
+		"transform-custom-element-classes",
+		"@babel/plugin-syntax-dynamic-import"
 	]
 }
