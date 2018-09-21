@@ -19,6 +19,11 @@ router
     await window.customElements.whenDefined('eth-company')
     main.innerHTML = '<eth-company></eth-company>'
   })
+  .on('simple-token', async () => {
+    await import('./simpleToken/simpleToken')
+    await window.customElements.whenDefined('eth-simple-coin')
+    main.innerHTML = '<eth-simple-coin></eth-simple-coin>'
+  })
   .notFound(() => {
     console.log('Not Found')
   })
