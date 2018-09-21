@@ -28,7 +28,7 @@ contract('SimpleToken', (accounts) => {
     const firstAccoutInitialBalance = (await contract.getBalance(owner)).toNumber()
     const secondAccountInitialBalance = (await contract.getBalance(receiver)).toNumber()
 
-    await contract.sendCoin(receiver, TOKEN_TO_SEND, { from: owner })
+    await contract.transfer(receiver, TOKEN_TO_SEND, { from: owner })
 
     const firstAccountFinalBalance = (await contract.getBalance(owner)).toNumber()
     const secondAccountFinalBalance = (await contract.getBalance(receiver)).toNumber()

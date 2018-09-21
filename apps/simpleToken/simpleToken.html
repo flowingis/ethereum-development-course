@@ -1,1 +1,35 @@
-<h1>Simple Token</h1>
+<section>
+    <h1>Simple Token</h1>
+    <div>
+        <h2>Contract</h2>
+        <div>
+            <div class="ui action input">
+                <input data-input-contract type="text" placeholder="Insert Address...">
+                <button class="ui button" data-connect>Connect</button>
+            </div>
+            <button class="ui button" data-deploy>Deploy New</button>
+        </div>
+        <p>Contract Address: <span data-contract-address></span></p>
+        <form class="ui form" action="#">
+            <div class="field">
+                <label>Send</label>
+                <div class="four fields">
+                    <div class="field">
+                        <input type="text" data-input-address placeholder="Address">
+                    </div>
+                    <div class="field">
+                        <input type="number" placeholder="Eth..." data-input-value>
+                    </div>
+                    <div class="field">
+                        <button type="button" class="ui button" data-transfer>Send</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <h4>Balances</h4>
+        <p>Onwer <span data-owner-tokens></span></p>
+        <div class="ui list" data-balances>
+
+        </div>
+    </div>
+</section>
