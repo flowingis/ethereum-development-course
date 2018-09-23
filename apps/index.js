@@ -24,6 +24,11 @@ router
     await window.customElements.whenDefined('eth-simple-coin')
     main.innerHTML = '<eth-simple-coin></eth-simple-coin>'
   })
+  .on('tutorial-token', async () => {
+    await import('./token/token')
+    await window.customElements.whenDefined('eth-token')
+    main.innerHTML = '<eth-token></eth-token>'
+  })
   .notFound(() => {
     console.log('Not Found')
   })

@@ -1,5 +1,5 @@
 <section>
-    <h1>Simple Token</h1>
+    <h1>ERC20 Token</h1>
     <div>
         <h2>Contract</h2>
         <div>
@@ -13,7 +13,7 @@
         <form class="ui form" action="#">
             <div class="field">
                 <label>Send</label>
-                <div class="three fields">
+                <div class="four fields">
                     <div class="field">
                         <input type="text" data-input-address placeholder="Address">
                     </div>
@@ -26,8 +26,24 @@
                 </div>
             </div>
         </form>
+        <form class="ui form" action="#">
+            <div class="field">
+                <label>Move</label>
+                <div class="four fields">
+                    <div class="field">
+                        <input type="text" data-input-move-address placeholder="From">
+                    </div>
+                    <div class="field">
+                        <input type="number" placeholder="Amount" data-input-move-value>
+                    </div>
+                    <div class="field">
+                        <button type="button" class="ui button" data-move>Move</button>
+                    </div>
+                </div>
+            </div>
+        </form>
         <h4>Balances</h4>
-        <p>Onwer <span data-owner-tokens></span></p>
+        <p><span data-owner-tokens></span></p>
         <div class="ui list" data-balances>
 
         </div>
