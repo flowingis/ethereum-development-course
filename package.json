@@ -73,7 +73,8 @@
       "artifacts",
       "web3",
       "HTMLElement",
-      "import"
+      "import",
+      "USE_METAMASK"
     ]
   }
 }

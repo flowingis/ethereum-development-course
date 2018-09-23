@@ -11,7 +11,7 @@ export const web3ProviderFix = LoggableCounter => {
   }
 }
 
-export const initWeb3 = (useMetaMask = false, url = 'ws://127.0.0.1:8545') => {
+export const initWeb3 = (useMetaMask = USE_METAMASK, url = 'ws://127.0.0.1:8545') => {
   if (useMetaMask && typeof web3 !== 'undefined') {
     return new Web3(web3.currentProvider)
   }

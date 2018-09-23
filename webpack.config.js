@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 const dist = path.join(__dirname, 'dist')
 
@@ -39,6 +40,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'apps', 'index.html')
+    }),
+    new webpack.DefinePlugin({
+      USE_METAMASK: JSON.stringify(process.argv.includes('--metamask'))
     })
   ],
   mode: 'development',
