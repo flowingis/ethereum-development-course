@@ -28,7 +28,11 @@
             * Receipts
         * Blocks
             * Genesis Block
+        * Token
+            * ERC20
+            * ITO
     * Solidity
+        * Truffle
 * Solidity By Example
 * Using Geth in production
 

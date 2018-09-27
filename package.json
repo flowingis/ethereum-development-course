@@ -8,7 +8,7 @@
     "build": "truffle compile",
     "precommit": "lint-staged",
     "test": "truffle test",
-    "local-node": "mkdir .db && ganache-cli --db .db",
+    "local-node": "mkdir -p .db && ganache-cli --db .db",
     "web3-console": "truffle console --network local",
     "deploy-local": "truffle deploy --reset --network local"
   },
