@@ -1,0 +1,28 @@
+<section>
+    <h1>ERC20 Token</h1>
+    <div>
+        <h2>Contract</h2>
+        <div>
+            <div class="ui action input">
+                <input data-input-contract type="text" placeholder="Insert Address...">
+                <button class="ui button" data-connect>Connect</button>
+            </div>
+            <button class="ui button" data-deploy>Deploy New</button>
+        </div>
+        <p>Contract Address: <span data-contract-address></span></p>
+        <form class="ui form" action="#">
+            <button class="ui button" type="button" data-start>Start</button>
+            <button class="ui button" type="button" data-stop>Stop</button>
+            <p>ITO Status: <span data-ito-status></span></p>
+            <div class="field">
+                <label>Purchase</label>
+                <div class="ui action input">
+                    <input data-input-amount type="text" placeholder="Eth Amount...">
+                    <button class="ui button" type="button" data-purchase>Purchase</button>
+                </div>
+            </div>
+        </form>
+        <p><span data-tokens-left></span></p>
+        <p><span data-my-tokens></span></p>
+    </div>
+</section>

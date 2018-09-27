@@ -6,8 +6,9 @@ contract ITO {
     TutorialToken token;
     address[] private bakers;
     address public owner = msg.sender;
-    bool started = false;
-    bool stopped = false;
+    address public tokenAddress;
+    bool public started = false;
+    bool public stopped = false;
 
     modifier onlyByOwner()
     {
@@ -29,6 +30,7 @@ contract ITO {
 
     constructor(address _address) public {
         token = TutorialToken(_address);
+        tokenAddress = _address;
     }
 
     function start() public onlyByOwner(){

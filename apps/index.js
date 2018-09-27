@@ -29,6 +29,11 @@ router
     await window.customElements.whenDefined('eth-token')
     main.innerHTML = '<eth-token></eth-token>'
   })
+  .on('ito', async () => {
+    await import('./ito/ito')
+    await window.customElements.whenDefined('eth-ito')
+    main.innerHTML = '<eth-ito></eth-ito>'
+  })
   .notFound(() => {
     console.log('Not Found')
   })
