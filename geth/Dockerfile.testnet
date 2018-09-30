@@ -1,6 +1,0 @@
-FROM geth
-
-CMD exec ./geth --ws --testnet --wsport "8545" --wsaddr "0.0.0.0" --wsorigins "*"
-
-EXPOSE 8545
-EXPOSE 30303

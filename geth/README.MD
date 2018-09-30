@@ -1,9 +1,17 @@
 # Working with Docker and geth
 
 ## Setup
-    docker build -f Dockerfile.base -t geth .
+
+    docker build -t geth .
+
+## Run
+
+    docker run -it -p 8545:8545 geth:latest
 
 ## Testnet
 
-    docker build -f Dockerfile.testnet -t geth:testnet .
-    docker run -p 8545:8545 geth:testnet
+    geth --testnet  --datadir ./eth_common/testnet/ --ws --wsport "8545" --wsaddr "0.0.0.0" --wsorigins "*"
+
+## Private
+
+    geth --networkid 15 --datadir ./eth_common/privatenet/ --ws --wsport "8545" --wsaddr "0.0.0.0" --wsorigins "*"
