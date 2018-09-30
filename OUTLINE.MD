@@ -2,7 +2,10 @@
 
 * Blockchain 101
     * Why it's important
-    * Benefits and challenges
+        * Hype
+        * Trust, Privacy, Immutability
+    * Definitions
+    * Challenges
     * History
     * Key Elements
         * Decentralized System
@@ -10,13 +13,15 @@
             * Proof of work
                 * Mining
             * Proof of Stake
-        * Blocks
+        * Cryptography
+        * Transactions
         * Smart Contract
 * Ethereum 101
+    * Differences with Bitcoin
     * History
         * ETH vs ETC   
-    * Differences with Bitcoin
     * Key Elements
+        * Accounts
         * Ether
             * Wei
         * Geth / Parity
@@ -35,4 +40,6 @@
         * Truffle
 * Solidity By Example
 * Using Geth in production
+    * private vs public blockchains
+    * docker example
 
