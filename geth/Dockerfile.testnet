@@ -1,16 +1,6 @@
-FROM ubuntu:xenial
+FROM geth
 
-RUN apt-get update \
-     && apt-get install -y wget \
-     && rm -rf /var/lib/apt/lists/* 
-
-WORKDIR "/opt"
-ARG binary
-RUN wget "https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.8.16-477eb093.tar.gz"
-RUN tar -xzvf geth-alltools-linux-amd64-1.8.16-477eb093.tar.gz --strip 1
-RUN rm geth-alltools-linux-amd64-1.8.16-477eb093.tar.gz
-
-CMD exec ./geth --testnet
+CMD exec ./geth --ws --testnet --wsport "8545" --wsaddr "0.0.0.0" --wsorigins "*"
 
 EXPOSE 8545
 EXPOSE 30303
