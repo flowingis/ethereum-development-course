@@ -17,29 +17,22 @@
         * Transactions
         * Smart Contract
 * Ethereum 101
-    * Differences with Bitcoin
     * History
-        * ETH vs ETC   
+        * ETH vs ETC (Dao Hack)
+    * Differences with Bitcoin
     * Key Elements
         * Accounts
         * Ether
-            * Wei
-        * Geth / Parity
-        * Web3
         * Gas
-        * Transaction
-            * Contract Creation
-            * Message Call
-            * Receipts
-        * Blocks
-            * Genesis Block
+        * Ethereum Stack (Web3 / Geth)
         * Token
             * ERC20
             * ITO
-    * Solidity
-        * Truffle
+* Solidity
+    * Truffle
 * Solidity By Example
-* Using Geth in production
-    * private vs public blockchains
-    * docker example
+* Deploy
+    * Metamask
+    * Docker example
+    * Genesis Block
 
