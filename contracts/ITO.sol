@@ -10,6 +10,8 @@ contract ITO {
     bool public started = false;
     bool public stopped = false;
 
+    event Purchase();
+
     modifier onlyByOwner()
     {
         require(
@@ -82,5 +84,7 @@ contract ITO {
         require(success, "Token not trasfered");
 
         bakers.push(msg.sender);
+
+        emit Purchase();
     }
 }
